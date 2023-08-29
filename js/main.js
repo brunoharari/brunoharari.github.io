@@ -84,8 +84,18 @@ function onScroll(event) {
   var typed = $(".typed");
 
   $(function () {
+    var pageName = window.location.pathname.split('/').pop(); // Get the last part of the URL
+    
+    // Set strings based on the page name
+    var strings = [];
+    if (pageName === 'index-eng.html') {
+      strings = [" PROGRAMMING.", "GRAPHIC DESIGN.", "ADVERTISING."]; // English strings
+    } else {
+      strings = [" PROGRAMACIÓN.", "DISEÑO GRÁFICO.", "PUBLICIDAD."]; // Default to Spanish strings
+    }
+    
     typed.typed({
-      strings: [" PROGRAMACIÓN.", "DISEÑO GRÁFICO.", "PUBLICIDAD."],
+      strings: strings,
       typeSpeed: 100,
       loop: true,
     });
