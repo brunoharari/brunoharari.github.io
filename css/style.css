@@ -513,7 +513,13 @@ nav ul li a {
   color: #fff;
 }
 
-
+/* Media queries para hacerlo responsive */
+@media (max-width: 768px) {
+  .skill {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    height: auto; /* Altura automática */
+  }
+}
 
 h2 {
   text-align: center;
