@@ -30,7 +30,7 @@ $('a.internal-link').on('click', function (e) {
 
         target = $(target);
         $('html, body').stop().animate({
-            'scrollTop': target.offset().top - 80
+            'scrollTop': target.offset().top - 100
         }, 500, 'swing', function () {
             window.location.hash = target.selector;
             $(document).on("scroll", onScroll);
@@ -202,17 +202,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const message = document.getElementById("message").value;
     const firstName = document.getElementById("first-name").value;
     
-    
+    // Get the user's preferred language
+    const userLanguage = navigator.language || navigator.userLanguage;
 
-    // Crear el enlace de envío a WhatsApp con el mensaje predeterminado
-    const whatsappMessage = `Hola, soy ${firstName}. Estoy interesado en un proyecto de tipo ${projectType}. Mi mensaje es: ${message}`;
+    // Create the WhatsApp message and success message based on the language
+    let whatsappMessage, successMessage;
+
+    if (userLanguage.startsWith("en")) {
+      whatsappMessage = `Hello, I am ${firstName}. I am interested in a ${projectType} project. My message is: ${message}`;
+      successMessage = "Form submitted successfully! We will contact you shortly.";
+    } else {
+      whatsappMessage = `Hola, soy ${firstName}. Estoy interesado en un proyecto de tipo ${projectType}. Mi mensaje es: ${message}`;
+      successMessage = "¡Formulario enviado con éxito! Nos pondremos en contacto contigo en breve.";
+    }
+
     const whatsappLink = `https://wa.me/${myPhone}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Abrir enlace de WhatsApp
+    // Open WhatsApp link
     window.open(whatsappLink);
 
-    alert("Formulario enviado con éxito! Te contactaremos en breve.");
+    // Display the appropriate success message
+    alert(successMessage);
     contactForm.reset();
   });
 });
+
 
