@@ -59,7 +59,7 @@ function onScroll(event) {
 
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
-    if (scroll > 200) {
+    if (scroll > 0) {
       $("#main-nav, #main-nav-subpage").slideDown(200);
       $("#main-nav-subpage").removeClass('subpage-nav');
     } else {
