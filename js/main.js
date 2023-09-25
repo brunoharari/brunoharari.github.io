@@ -190,17 +190,7 @@ $(window).load(function () {
 //  Contacto Formulario
 // ========================================================================= //
 
-$("#mobile_code").intlTelInput({
-	initialCountry: "auto",
-	separateDialCode: true,
-  geoIpLookup: callback => {
-    fetch("https://ipapi.co/json")
-      .then(res => res.json())
-      .then(data => callback(data.country_code))
-      .catch(() => callback("us"));
-  },
-	// utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
-});
+
 document.addEventListener("DOMContentLoaded", function () {
   const contactForm = document.getElementById("contact-form");
 
@@ -212,13 +202,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const message = document.getElementById("message").value;
     const firstName = document.getElementById("first-name").value;
     
-    const phone = document.getElementById("#mobile_code");
-    const iti = window.intlTelInput(phone)
-    const number = iti.getNumber();
-    console.log(number)
+    
 
     // Crear el enlace de envío a WhatsApp con el mensaje predeterminado
-    const whatsappMessage = `Hola, soy ${firstName}. Estoy interesado en un proyecto de tipo ${projectType}. Mi mensaje es: ${message}, mi telefono es ${phone}`;
+    const whatsappMessage = `Hola, soy ${firstName}. Estoy interesado en un proyecto de tipo ${projectType}. Mi mensaje es: ${message}`;
     const whatsappLink = `https://wa.me/${myPhone}?text=${encodeURIComponent(whatsappMessage)}`;
 
     // Abrir enlace de WhatsApp
