@@ -824,4 +824,7 @@ form button {
   font-size: 13px;
 }
 
-
+.calendly-badge-content {
+  font-size: 20px !important;
+  
+}
