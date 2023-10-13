@@ -186,45 +186,6 @@ $(window).load(function () {
 
 })
 
-// ========================================================================= //
-//  Contacto Formulario
-// ========================================================================= //
 
-
-document.addEventListener("DOMContentLoaded", function () {
-  const contactForm = document.getElementById("contact-form");
-
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const myPhone = "+5492944297078"
-
-    const projectType = document.getElementById("project-type").value;
-    const message = document.getElementById("message").value;
-    const firstName = document.getElementById("first-name").value;
-    
-    // Get the user's preferred language
-    const userLanguage = navigator.language || navigator.userLanguage;
-
-    // Create the WhatsApp message and success message based on the language
-    let whatsappMessage, successMessage;
-
-    if (userLanguage.startsWith("en")) {
-      whatsappMessage = `Hello, I am ${firstName}. I am interested in a ${projectType} project. My message is: ${message}`;
-      successMessage = "Form submitted successfully! We will contact you shortly.";
-    } else {
-      whatsappMessage = `Hola, soy ${firstName}. Estoy interesado en un proyecto de tipo ${projectType}. Mi mensaje es: ${message}`;
-      successMessage = "¡Formulario enviado con éxito! Nos pondremos en contacto contigo en breve.";
-    }
-
-    const whatsappLink = `https://wa.me/${myPhone}?text=${encodeURIComponent(whatsappMessage)}`;
-
-    // Open WhatsApp link
-    window.open(whatsappLink);
-
-    // Display the appropriate success message
-    alert(successMessage);
-    contactForm.reset();
-  });
-});
 
 
