@@ -207,8 +207,7 @@ nav {
   background: #fff;
   z-index: 1000;
   width: 100%;
-  padding: 20px;
-  display: none;
+  padding: 10px;
   box-shadow: -1px 7px 5px -1px rgba(0, 0, 0, 0.22);
   -webkit-box-shadow: -1px 7px 5px -1px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: -1px 7px 5px -1px rgba(0, 0, 0, 0.22);
@@ -434,7 +433,7 @@ nav ul li a {
   height: 320px; /* Ajusta el alto deseado */
   background-color: #ffffff;
   border-radius: 10px;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 1s ease-in-out;
   display: inline-block; /* Para que estén en línea */
   vertical-align: top; /* Alinear en la parte superior */
 }

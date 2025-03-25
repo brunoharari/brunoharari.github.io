@@ -32,7 +32,6 @@ $('a.internal-link').on('click', function (e) {
         $('html, body').stop().animate({
             'scrollTop': target.offset().top - 100
         }, 500, 'swing', function () {
-            window.location.hash = target.selector;
             $(document).on("scroll", onScroll);
         });
     }
@@ -56,18 +55,6 @@ function onScroll(event) {
   //  //NAVBAR SHOW - HIDE
   // ========================================================================= //
 
-
-  $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    if (scroll > 0) {
-      $("#main-nav, #main-nav-subpage").slideDown(200);
-      $("#main-nav-subpage").removeClass('subpage-nav');
-    } else {
-      $("#main-nav").slideUp(200);
-      $("#main-nav-subpage").hide();
-      $("#main-nav-subpage").addClass('subpage-nav');
-    }
-  });
 
   // ========================================================================= //
   //  // RESPONSIVE MENU
