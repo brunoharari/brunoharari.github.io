@@ -301,7 +301,7 @@ nav ul li a {
 @media (max-width: 768px) {
   .menu-toggle {
     display: inline-block;
-    margin-left: 150px;
+    margin-left: 100px;
     font-size: 30px;
     cursor: pointer;
     color: #000;
