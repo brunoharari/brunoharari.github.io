@@ -60,9 +60,7 @@ function onScroll(event) {
   //  // RESPONSIVE MENU
   // ========================================================================= //
 
-  $('.responsive').on('click', function (e) {
-    $('.nav-menu').slideToggle();
-  });
+
 
   // ========================================================================= //
   //  Typed Js
@@ -172,6 +170,16 @@ $(window).load(function () {
   });
 
 })
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  menuToggle.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+  });
+});
+
 
 
 

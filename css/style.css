@@ -89,22 +89,6 @@ a:focus {
   text-decoration: underline;
 }
 
-nav ul li a {
-  padding: 2px 0 0 0;
-  position: relative;
-  display: block;
-  font-size: 18px;
-  color: #000000;
-  letter-spacing: 0.1em;
-  font-weight: 500;
-  line-height: 14px;
-  text-transform: uppercase;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -ms-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
-}
 
 p {
   margin: 25px 0;
@@ -223,7 +207,7 @@ nav {
 nav ul li {
   float: left;
   margin-right: 15px;
-  font-family: "Poppins", sans-serif;
+  
   font-size: 14px;
   margin-left: 40px;
 }
@@ -235,12 +219,14 @@ nav ul li a {
   font-size: 18px;
   color: #000000;
   font-family: "Poppins", helvetica;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 16px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   text-transform: capitalize;
 }
+
+
 
 .logo {
   float: left;
@@ -251,13 +237,77 @@ nav ul li a {
   height: 66px;
 }
 
-.responsive {
-  display: none;
-  font-size: 23px;
-}
+
 
 .active {
   color: #afafaf;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+
+/* Media query para pantallas menores a 768px */
+@media (max-width: 1046px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    gap: 25px;
+    top: 85px;
+    left: 0;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-menu.active ul li {
+    margin-top: 50px;
+    padding: 20px;
+  }
+
+  .nav-menu ul li a {
+    padding: 20px;
+  }
+
+  .menu-toggle {
+        display: inline-block;
+        margin-left: 400px;
+        font-size: 30px;
+        cursor: pointer;
+        color: #000;
+        padding: 20px;
+        border-radius: 50%;
+  }
+
+  .menu-toggle:hover {
+    background-color: #ffcc00;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+    margin-left: 200px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+    padding: 20px;
+    border-radius: 50%;
+}
 }
 
 /*----------------------------------------------------------------------------------*/
