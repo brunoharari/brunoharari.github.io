@@ -9,8 +9,8 @@
 /*-----------------------------------------------------------------------------------*/
 
 body {
-  background: #ffffff;
-  color: #898989;
+  background: #000;
+  color: #fff;
   font-family: "Poppins", helvetica;
   font-size: 15px;
   font-weight: 300;
@@ -36,9 +36,11 @@ h6 {
 }
 
 h2 {
-  color: #292929;
+  color: #ffffff;
   font-weight: 500;
   font-size: 60px;
+  text-decoration: underline;
+  text-decoration-color: #ffb74d;
   font-family: "Changa One";
  
 }
@@ -124,6 +126,7 @@ p {
 .btn:hover,
 .btn:focus {
   color: #fff;
+  background-color: #000;
 }
 
 .padDiv {
@@ -240,7 +243,7 @@ nav ul li a {
 
 
 .active {
-  color: #afafaf;
+  color: #ffcc00;
 }
 
 .menu-toggle {
@@ -366,7 +369,7 @@ nav ul li a {
 #about {
   width: 100%;
   height: auto;
-  background: #f7f7f7;
+  background: #242424;
   padding-top: 190px;
 }
 
@@ -387,6 +390,7 @@ nav ul li a {
 #about .about-descr .p-heading {
   font-family: "Playfair Display", serif;
   font-size: 28px;
+  color: #fff;
   text-align: left;
 }
 
@@ -394,6 +398,10 @@ nav ul li a {
   max-width: 80%;
   margin-bottom: 0;
   text-align: left;
+}
+
+.about-us p {
+ color: #fff; 
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -483,9 +491,14 @@ nav ul li a {
   height: 320px; /* Ajusta el alto deseado */
   background-color: #ffffff;
   border-radius: 10px;
-  transition: background-color 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   display: inline-block; /* Para que estén en línea */
   vertical-align: top; /* Alinear en la parte superior */
+}
+
+.skill:hover {
+  transform: scale(1.05);
+  cursor: default;
 }
 
 .skill i {
@@ -560,6 +573,7 @@ nav ul li a {
 .skill:hover h3,
 .skill:hover p {
   color: #fff;
+  transition: color 0.5s ease-in-out;
 }
 
 /* Media queries para hacerlo responsive */
@@ -567,6 +581,91 @@ nav ul li a {
   .skill {
     width: 100%; /* Ocupar todo el ancho disponible */
     height: auto; /* Altura automática */
+  }
+}
+
+/* Styles for course cards */
+.course-card {
+  background: #000000;
+  border-radius: 8px;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  padding: 20px;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 204, 0, 1);
+}
+
+.course-icon i {
+  font-size: 48px;
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+
+.course-card h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.course-card p {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.course-card .price {
+  color: #ffcc00;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.course-card .price strong {
+  color: #ffffff;
+  font-size: 15px; 
+}
+
+.course-card .enroll-btn {
+  background: #ffcc00;
+  color: #000;
+  padding: 15px 30px;
+  display: inline-block;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.course-card .enroll-btn:hover {
+  background: #e6b800;
+  color: #000;
+  text-decoration: none;
+}
+
+.course-card .program-btn {
+  background: #ffcc00;
+  color: #000;
+  padding: 10px 20px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -630,7 +729,7 @@ form button {
   padding: 20px;
   float: left;
   font-size: 18px;
-  color: #000000;
+  color: #ffffff;
   border: 2px solid #ffcc00;
   border-radius: 20px;
   line-height: 16px;

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <title>Brandr - Programas de Cursos</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Accordion Stylesheet File -->
+  <link href="css/accordion.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <style>
+    .course-detail {
+      padding: 50px 0;
+      background-color: #f7f7f7;
+    }
+    
+    .course-header {
+      background-color: #000;
+      color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+    
+    .course-header h2 {
+      color: #ffcc00;
+      margin-bottom: 15px;
+    }
+    
+    .course-header p {
+      color: #fff;
+      font-size: 18px;
+    }
+    
+    .course-content {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .course-content h3 {
+      color: #000;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ffcc00;
+      padding-bottom: 10px;
+    }
+    
+    .module {
+      margin-bottom: 25px;
+    }
+    
+    .module h4 {
+      font-size: 18px;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    
+    .module ul {
+      padding-left: 20px;
+    }
+    
+    .module ul li {
+      margin-bottom: 8px;
+      color: #333;
+    }
+    
+    .course-section {
+      margin-bottom: 40px;
+    }
+    
+    .course-section h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #000;
+    }
+    
+    .course-section p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    .course-nav {
+      position: sticky;
+      top: 100px;
+    }
+    
+    .course-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .course-nav ul li {
+      margin-bottom: 10px;
+    }
+    
+    .course-nav ul li a {
+      display: block;
+      padding: 10px 15px;
+      background-color: #f1f1f1;
+      color: #333;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .course-nav ul li a:hover,
+    .course-nav ul li a.active {
+      background-color: #ffcc00;
+      color: #000;
+    }
+
+    body {
+        background-color: #fff;
+    }
+    
+    
+    
+    
+  </style>
+
+</head>
+
+<style>
+
+  li {
+    color: #000!important;
+    font-weight: 300;
+  }
+
+  strong {
+    color: #000!important; 
+  }
+</style>
+
+<body>
+  <a target="_blank" href="https://api.whatsapp.com/send?phone=%2B5492944297078&amp;text=Quiero+armar+mi+proyecto" id="whatsapp-button" style="position:fixed; bottom:20px; right:10px; width:50px; z-index:999;"><img style="width:100%;" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6I0VERURFRDsiIGQ9Ik0wLDUxMmwzNS4zMS0xMjhDMTIuMzU5LDM0NC4yNzYsMCwzMDAuMTM4LDAsMjU0LjIzNEMwLDExNC43NTksMTE0Ljc1OSwwLDI1NS4xMTcsMCAgUzUxMiwxMTQuNzU5LDUxMiwyNTQuMjM0UzM5NS40NzYsNTEyLDI1NS4xMTcsNTEyYy00NC4xMzgsMC04Ni41MS0xNC4xMjQtMTI0LjQ2OS0zNS4zMUwwLDUxMnoiLz4KPHBhdGggc3R5bGU9ImZpbGw6IzU1Q0Q2QzsiIGQ9Ik0xMzcuNzEsNDMwLjc4Nmw3Ljk0NSw0LjQxNGMzMi42NjIsMjAuMzAzLDcwLjYyMSwzMi42NjIsMTEwLjM0NSwzMi42NjIgIGMxMTUuNjQxLDAsMjExLjg2Mi05Ni4yMjEsMjExLjg2Mi0yMTMuNjI4UzM3MS42NDEsNDQuMTM4LDI1NS4xMTcsNDQuMTM4UzQ0LjEzOCwxMzcuNzEsNDQuMTM4LDI1NC4yMzQgIGMwLDQwLjYwNywxMS40NzYsODAuMzMxLDMyLjY2MiwxMTMuODc2bDUuMjk3LDcuOTQ1bC0yMC4zMDMsNzQuMTUyTDEzNy43MSw0MzAuNzg2eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojRkVGRUZFOyIgZD0iTTE4Ny4xNDUsMTM1Ljk0NWwtMTYuNzcyLTAuODgzYy01LjI5NywwLTEwLjU5MywxLjc2Ni0xNC4xMjQsNS4yOTcgIGMtNy45NDUsNy4wNjItMjEuMTg2LDIwLjMwMy0yNC43MTcsMzcuOTU5Yy02LjE3OSwyNi40ODMsMy41MzEsNTguMjYyLDI2LjQ4Myw5MC4wNDFzNjcuMDksODIuOTc5LDE0NC43NzIsMTA1LjA0OCAgYzI0LjcxNyw3LjA2Miw0NC4xMzgsMi42NDgsNjAuMDI4LTcuMDYyYzEyLjM1OS03Ljk0NSwyMC4zMDMtMjAuMzAzLDIyLjk1Mi0zMy41NDVsMi42NDgtMTIuMzU5ICBjMC44ODMtMy41MzEtMC44ODMtNy45NDUtNC40MTQtOS43MWwtNTUuNjE0LTI1LjZjLTMuNTMxLTEuNzY2LTcuOTQ1LTAuODgzLTEwLjU5MywyLjY0OGwtMjIuMDY5LDI4LjI0OCAgYy0xLjc2NiwxLjc2Ni00LjQxNCwyLjY0OC03LjA2MiwxLjc2NmMtMTUuMDA3LTUuMjk3LTY1LjMyNC0yNi40ODMtOTIuNjktNzkuNDQ4Yy0wLjg4My0yLjY0OC0wLjg4My01LjI5NywwLjg4My03LjA2MiAgbDIxLjE4Ni0yMy44MzRjMS43NjYtMi42NDgsMi42NDgtNi4xNzksMS43NjYtOC44MjhsLTI1LjYtNTcuMzc5QzE5My4zMjQsMTM4LjU5MywxOTAuNjc2LDEzNS45NDUsMTg3LjE0NSwxMzUuOTQ1Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="></a>
+
+  <!-- start section navbar -->
+  <nav id="main-nav">
+    <div class="row">
+      <div class="container-fluid">
+
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+        </div>
+
+        <div class="menu-toggle">&#9776;</div>
+
+        <ul class="nav-menu list-unstyled">
+          <li><a href="index.html#header" class="smoothScroll internal-link">Inicio</a></li>
+          <li><a href="index.html#about" class="smoothScroll internal-link">Nosotros</a></li>
+          <li><a href="index.html#portfolio" class="smoothScroll internal-link">Portafolio</a></li>
+          <li><a href="index.html#courses" class="smoothScroll internal-link">Cursos</a></li>
+          
+          <li><a href="https://api.whatsapp.com/send?phone=%2B5492944297078&amp;text=Quiero+más+información+sobre+los+cursos" target="_blank" class="smoothScroll internal-link">Contacto</a></li>
+          
+          <li><a href="https://www.instagram.com/brandr.design/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <!-- End section navbar -->
+
+  <!-- Encabezado de la página -->
+  <div class="container-fluid" >
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="section-title">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="course-nav">
+          <h4>Nuestros Cursos</h4>
+          <ul>
+            <li><a href="#desarrollo-web">Desarrollo Web</a></li>
+            <li><a href="#diseno-uxui">Diseño UX/UI</a></li>
+            <li><a href="#edicion-video">Edición de Video</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-9">
+        <!-- Curso: Desarrollo Web -->
+        <section id="desarrollo-web" class="course-detail">
+          <div class="course-header">
+            <h2><i class="fas fa-code"></i> Desarrollo Web</h2>
+            <p>Aprende HTML, CSS y JavaScript para crear sitios web modernos y responsivos. Este curso te dará las bases para convertirte en un desarrollador web front-end.</p>
+          </div>
+          
+          <div class="course-content">
+            <div class="course-section">
+              <h3>Descripción del Curso</h3>
+              <p>El curso de Desarrollo Web está diseñado para personas que desean iniciarse en el mundo de la programación web, aprendiendo las tecnologías fundamentales que conforman la base de cualquier sitio o aplicación web moderna. A lo largo de 10 semanas, aprenderás desde los conceptos básicos de HTML y CSS hasta la implementación de interactividad con JavaScript, culminando con la creación de un proyecto web completo.</p>
+              <p>Este programa combina teoría y práctica, con ejercicios semanales y un proyecto final que te permitirá aplicar todos los conocimientos adquiridos. Las clases son impartidas por profesionales con experiencia en el sector, quienes te guiarán en cada paso del proceso de aprendizaje.</p>
+            </div>
+            
+            <div class="course-section">
+              <h3>Objetivos de Aprendizaje</h3>
+              <ul>
+                <li>Comprender los fundamentos del desarrollo web y cómo funciona Internet</li>
+                <li>Dominar HTML5 para crear estructuras web semánticas y accesibles</li>
+                <li>Aplicar CSS3 para diseñar interfaces atractivas y responsivas</li>
+                <li>Implementar JavaScript para añadir interactividad a las páginas web</li>
+                <li>Utilizar frameworks como Bootstrap para agilizar el desarrollo</li>
+                <li>Crear un sitio web completo desde cero hasta su publicación</li>
+              </ul>
+            </div>
+            
+            <div class="course-section">
+              <h3>Programa Detallado</h3>
+              
+              <div class="module">
+                <h4>Módulo 1: Introducción al Desarrollo Web</h4>
+                <ul>
+                  <li><strong>Historia de la web y su evolución:</strong> Desde los inicios de Internet hasta la web actual, evolución de los estándares y tecnologías web.</li>
+                  <li><strong>Cómo funciona Internet y los navegadores:</strong> Protocolos de comunicación, servidores, clientes, DNS y cómo los navegadores interpretan el código.</li>
+                  <li><strong>Herramientas necesarias para el desarrollo web:</strong> Editores de código, navegadores, extensiones útiles y herramientas de desarrollo.</li>
+                  <li><strong>Configuración del entorno de trabajo:</strong> Instalación y configuración de las herramientas necesarias para comenzar a desarrollar.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 2: HTML5 - Estructura de Páginas Web</h4>
+                <ul>
+                  <li><strong>Estructura básica de un documento HTML:</strong> Doctype, elementos html, head y body, metadatos y estructura básica.</li>
+                  <li><strong>Etiquetas semánticas y su importancia:</strong> Header, nav, main, section, article, aside, footer y su impacto en SEO y accesibilidad.</li>
+                  <li><strong>Formularios y validación:</strong> Creación de formularios, tipos de inputs, atributos de validación y procesamiento básico.</li>
+                  <li><strong>Multimedia: audio, video e imágenes:</strong> Integración de contenido multimedia, formatos soportados y optimización.</li>
+                  <li><strong>Prácticas de accesibilidad web:</strong> ARIA, alt text, estructura semántica y pruebas de accesibilidad.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 3: CSS3 - Estilizando tu Sitio Web</h4>
+                <ul>
+                  <li><strong>Selectores y propiedades CSS:</strong> Tipos de selectores, especificidad, herencia y propiedades fundamentales.</li>
+                  <li><strong>Modelo de caja y posicionamiento:</strong> Box model, margin, padding, border, display, position y z-index.</li>
+                  <li><strong>Flexbox y Grid para layouts modernos:</strong> Creación de layouts complejos y responsivos con las nuevas tecnologías de CSS.</li>
+                  <li><strong>Diseño responsivo y Media Queries:</strong> Mobile-first, breakpoints, viewport y adaptación a diferentes dispositivos.</li>
+                  <li><strong>Animaciones y transiciones:</strong> Propiedades transition, transform y animation para crear efectos visuales atractivos.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 4: JavaScript Básico</h4>
+                <ul>
+                  <li><strong>Sintaxis y variables:</strong> Tipos de datos, declaración de variables, scope y hoisting.</li>
+                  <li><strong>Operadores y estructuras de control:</strong> Operadores aritméticos, de comparación, lógicos, condicionales y bucles.</li>
+                  <li><strong>Funciones y eventos:</strong> Declaración de funciones, parámetros, return, eventos del DOM y event listeners.</li>
+                  <li><strong>Manipulación del DOM:</strong> Selección de elementos, modificación de contenido, estilos y atributos, creación y eliminación de elementos.</li>
+                  <li><strong>Almacenamiento local:</strong> LocalStorage, SessionStorage y cookies para persistencia de datos en el navegador.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 5: Frameworks y Bibliotecas</h4>
+                <ul>
+                  <li><strong>Introducción a Bootstrap:</strong> Sistema de grid, componentes predefinidos y utilidades.</li>
+                  <li><strong>Componentes y utilidades de Bootstrap:</strong> Navbar, cards, modals, carousel y personalización.</li>
+                  <li><strong>jQuery básico:</strong> Selección de elementos, eventos, animaciones y AJAX básico.</li>
+                  <li><strong>Introducción a frameworks modernos:</strong> Conceptos básicos de React y Vue, componentes y estado.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 6: Proyecto Final</h4>
+                <ul>
+                  <li><strong>Planificación y diseño del proyecto:</strong> Definición de objetivos, wireframing, mockups y arquitectura.</li>
+                  <li><strong>Implementación de funcionalidades:</strong> Desarrollo de las características principales del sitio web.</li>
+                  <li><strong>Optimización y mejores prácticas:</strong> Performance, SEO básico, accesibilidad y compatibilidad cross-browser.</li>
+                  <li><strong>Despliegue del sitio web:</strong> Opciones de hosting, dominio, FTP y puesta en producción.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="course-section">
+              <h3>Metodología de Enseñanza</h3>
+              <p>El curso combina clases teóricas con ejercicios prácticos y proyectos reales. Cada sesión incluye:</p>
+              <ul>
+                <li>Explicación teórica de conceptos</li>
+                <li>Demostraciones en vivo</li>
+                <li>Ejercicios guiados</li>
+                <li>Tiempo para práctica individual</li>
+                <li>Revisión y feedback personalizado</li>
+              </ul>
+              <p>Además, contarás con acceso a un campus virtual donde encontrarás material complementario, grabaciones de las clases y podrás realizar consultas fuera del horario de clase.</p>
+            </div>
+            
+            <div class="course-section">
+              <h3>Requisitos Técnicos</h3>
+              <ul>
+                <li>Computadora con sistema operativo Windows, macOS o Linux</li>
+                <li>Conexión a Internet estable</li>
+                <li>Navegador web actualizado (Chrome, Firefox, Edge o Safari)</li>
+                <li>Editor de código (recomendamos Visual Studio Code)</li>
+                <li>No se requieren conocimientos previos de programación</li>
+              </ul>
+            </div>
+            
+            <div class="course-section">
+              <h3>Evaluación y Certificación</h3>
+              <p>La evaluación del curso se basa en:</p>
+              <ul>
+                <li>Participación en clase (10%)</li>
+                <li>Ejercicios semanales (40%)</li>
+                <li>Proyecto final (50%)</li>
+              </ul>
+              <p>Al finalizar el curso y aprobar la evaluación, recibirás un certificado digital que acredita tus conocimientos en Desarrollo Web Front-end.</p>
+            </div>
+            
+            <div class="course-section">
+              <h3>Información Adicional</h3>
+              <p><strong>Duración:</strong> 10 semanas</p>
+              <p><strong>Clases:</strong> 2 clases semanales de 2 horas</p>
+              <p><strong>Modalidad:</strong> 100% online con clases en vivo</p>
+              <p><strong>Plataforma:</strong> Google Meet</p>
+              <p><strong>Precio:</strong> $15.000 ARS semanales</p>
+              <p><strong>Formas de pago:</strong> Transferencia bancaria, Mercado Pago.</p>
+              <a href="https://api.whatsapp.com/send?phone=%2B5492944297078&amp;text=Me+interesa+el+curso+de+Desarrollo+Web" class="btn btn-primary" target="_blank">Inscribirme ahora</a>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Curso: Diseño UX/UI -->
+        <section id="diseno-uxui" class="course-detail">
+          <div class="course-header">
+            <h2><i class="fas fa-paint-brush"></i> Diseño UX/UI</h2>
+            <p>Domina las herramientas y principios del diseño de interfaces y experiencia de usuario. Aprende a crear productos digitales centrados en el usuario.</p>
+          </div>
+          
+          <div class="course-content">
+            <div class="course-section">
+              <h3>Descripción del Curso</h3>
+              <p>El curso de Diseño UX/UI está orientado a personas interesadas en el diseño de experiencias e interfaces digitales. Durante 10 semanas, aprenderás a crear productos digitales centrados en el usuario, desde la investigación inicial hasta el prototipado de alta fidelidad, pasando por la arquitectura de información y el diseño visual.</p>
+              <p>Este programa te permitirá desarrollar las habilidades necesarias para diseñar interfaces intuitivas y atractivas que mejoren la experiencia del usuario. Las clases son impartidas por profesionales con experiencia en el sector, quienes compartirán casos reales y mejores prácticas de la industria.</p>
+            </div>
+            
+            <div class="course-section">
+              <h3>Objetivos de Aprendizaje</h3>
+              <ul>
+                <li>Comprender los principios fundamentales del diseño UX/UI</li>
+                <li>Aplicar metodologías de investigación de usuarios</li>
+                <li>Desarrollar arquitecturas de información efectivas</li>
+                <li>Crear wireframes y prototipos interactivos</li>
+                <li>Diseñar interfaces visuales atractivas y funcionales</li>
+                <li>Implementar procesos de testing y mejora continua</li>
+              </ul>
+            </div>
+            
+            <div class="course-section">
+              <h3>Programa Detallado</h3>
+              
+              <div class="module">
+                <h4>Módulo 1: Fundamentos del Diseño UX/UI</h4>
+                <ul>
+                  <li><strong>Diferencias entre UX y UI:</strong> Roles, responsabilidades y cómo se complementan en el proceso de diseño.</li>
+                  <li><strong>Historia y evolución del diseño de interfaces:</strong> Desde las primeras GUI hasta las interfaces modernas.</li>
+                  <li><strong>Principios de diseño centrado en el usuario:</strong> Usabilidad, accesibilidad, consistencia y feedback.</li>
+                  <li><strong>Psicología del color y tipografía:</strong> Impacto emocional, legibilidad y jerarquía visual.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 2: Investigación de Usuarios</h4>
+                <ul>
+                  <li><strong>Métodos de investigación cualitativa y cuantitativa:</strong> Entrevistas, encuestas, analytics y pruebas de usabilidad.</li>
+                  <li><strong>Creación de personas y escenarios:</strong> Definición de usuarios objetivo, necesidades, motivaciones y contextos de uso.</li>
+                  <li><strong>Customer Journey Maps:</strong> Mapeo de la experiencia del usuario a través de los puntos de contacto.</li>
+                  <li><strong>Análisis de la competencia:</strong> Benchmarking, identificación de fortalezas y debilidades, oportunidades de diferenciación.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 3: Arquitectura de Información</h4>
+                <ul>
+                  <li><strong>Organización y jerarquía de contenidos:</strong> Taxonomías, categorización y estructuración de la información.</li>
+                  <li><strong>Creación de mapas de sitio:</strong> Diagramas de flujo, mapas conceptuales y representación visual de la estructura.</li>
+                  <li><strong>Card sorting y tree testing:</strong> Métodos para validar la arquitectura de información con usuarios reales.</li>
+                  <li><strong>Patrones de navegación:</strong> Menús, breadcrumbs, filtros y búsquedas para facilitar la navegación.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 4: Wireframing y Prototipado</h4>
+                <ul>
+                  <li><strong>Creación de wireframes de baja fidelidad:</strong> Sketching, wireframes en papel y digitales.</li>
+                  <li><strong>Herramientas de prototipado:</strong> Figma, Adobe XD, principios básicos y flujos de trabajo.</li>
+                  <li><strong>Diseño de interacciones:</strong> Estados, transiciones, microinteracciones y feedback visual.</li>
+                  <li><strong>Testing de usabilidad:</strong> Métodos de evaluación, análisis de resultados e iteración.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 5: Diseño Visual de Interfaces</h4>
+                <ul>
+                  <li><strong>Sistemas de diseño y componentes:</strong> Creación de bibliotecas de componentes, tokens de diseño y guías de estilo.</li>
+                  <li><strong>Principios de composición visual:</strong> Equilibrio, contraste, alineación, proximidad y jerarquía visual.</li>
+                  <li><strong>Microinteracciones y animaciones:</strong> Principios de animación, estados y transiciones para mejorar la experiencia.</li>
+                  <li><strong>Diseño adaptativo y responsive:</strong> Principios de diseño para múltiples dispositivos y tamaños de pantalla.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 6: Proyecto Final</h4>
+                <ul>
+                  <li><strong>Definición del problema a resolver:</strong> Identificación de necesidades y oportunidades de diseño.</li>
+                  <li><strong>Investigación y análisis:</strong> Aplicación de métodos de investigación para informar el diseño.</li>
+                  <li><strong>Diseño de la solución:</strong> Desde wireframes hasta prototipos de alta fidelidad.</li>
+                  <li><strong>Prototipado y presentación:</strong> Creación de un prototipo interactivo y presentación del proyecto.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="course-section">
+              <h3>Metodología de Enseñanza</h3>
+              <p>El curso se desarrolla mediante una combinación de teoría y práctica, con énfasis en el aprendizaje basado en proyectos. Cada sesión incluye:</p>
+              <ul>
+                <li>Presentación de conceptos teóricos</li>
+                <li>Análisis de casos de estudio</li>
+                <li>Demostraciones prácticas de herramientas</li>
+                <li>Ejercicios individuales y grupales</li>
+                <li>Revisiones de diseño y feedback constructivo</li>
+              </ul>
+              <p>Los estudiantes tendrán acceso a un campus virtual con recursos adicionales, tutoriales y foros de discusión para complementar su aprendizaje.</p>
+            </div>
+            
+            <div class="course-section">
+              <h3>Requisitos Técnicos</h3>
+              <ul>
+                <li>Computadora con sistema operativo Windows o macOS</li>
+                <li>Conexión a Internet estable</li>
+                <li>Figma o Adobe XD instalado (se proporcionarán licencias educativas)</li>
+                <li>No se requieren conocimientos previos de diseño, aunque es recomendable tener nociones básicas</li>
+              </ul>
+            </div>
+            
+            <div class="course-section">
+              <h3>Evaluación y Certificación</h3>
+              <p>La evaluación del curso se basa en:</p>
+              <ul>
+                <li>Participación en clase y ejercicios (20%)</li>
+                <li>Entregas parciales (30%)</li>
+                <li>Proyecto final (50%)</li>
+              </ul>
+              <p>Al finalizar el curso y aprobar la evaluación, recibirás un certificado digital que acredita tus conocimientos en Diseño UX/UI.</p>
+            </div>
+            
+            <div class="course-section">
+              <h3>Información Adicional</h3>
+              <p><strong>Duración:</strong> 10 semanas</p>
+              <p><strong>Clases:</strong> 2 clases semanales de 2 horas</p>
+              <p><strong>Modalidad:</strong> 100% online con clases en vivo</p>
+              <p><strong>Plataforma:</strong> Google Meet</p>
+              <p><strong>Precio:</strong> $18.000 ARS semanal</p>
+              <p><strong>Formas de pago:</strong> Transferencia bancaria, Mercado Pago, tarjeta de crédito/débito</p>
+              <a href="https://api.whatsapp.com/send?phone=%2B5492944297078&amp;text=Me+interesa+el+curso+de+Diseño+UX/UI" class="btn btn-primary" target="_blank">Inscribirme ahora</a>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Curso: Edición de Video -->
+        <section id="edicion-video" class="course-detail">
+          <div class="course-header">
+            <h2><i class="fas fa-video"></i> Edición de Video</h2>
+            <p>Aprende a crear y editar contenido audiovisual profesional para múltiples plataformas. Domina las técnicas de edición, efectos visuales y narrativa audiovisual.</p>
+          </div>
+          
+          <div class="course-content">
+            <div class="course-section">
+              <h3>Descripción del Curso</h3>
+              <p>El curso de Edición de Video está diseñado para personas que desean aprender a crear contenido audiovisual de calidad profesional. Durante 10 semanas, aprenderás desde los fundamentos de la edición hasta técnicas avanzadas de postproducción, efectos visuales y optimización para diferentes plataformas.</p>
+              <p>Este programa te permitirá dominar las herramientas más utilizadas en la industria, como Adobe Premiere Pro y After Effects, mientras desarrollas tu creatividad y capacidad narrativa a través de proyectos prácticos. Las clases son impartidas por profesionales con experiencia en producción audiovisual.</p>
+            </div>
+            
+            <div class="course-section">
+              <h3>Objetivos de Aprendizaje</h3>
+              <ul>
+                <li>Comprender los principios fundamentales de la edición audiovisual</li>
+                <li>Dominar las herramientas profesionales de edición de video</li>
+                <li>Aplicar técnicas de corrección de color y efectos visuales</li>
+                <li>Crear animaciones y gráficos en movimiento</li>
+                <li>Optimizar contenido para diferentes plataformas digitales</li>
+                <li>Desarrollar un proyecto audiovisual completo</li>
+              </ul>
+            </div>
+            
+            <div class="course-section">
+              <h3>Programa Detallado</h3>
+              
+              <div class="module">
+                <h4>Módulo 1: Fundamentos de la Edición de Video</h4>
+                <ul>
+                  <li><strong>Historia y evolución de la edición audiovisual:</strong> Desde el montaje analógico hasta la edición digital.</li>
+                  <li><strong>Principios de composición y narrativa visual:</strong> Encuadre, continuidad, ritmo y storytelling visual.</li>
+                  <li><strong>Formatos de video y códecs:</strong> Resoluciones, aspect ratios, frame rates y compresión.</li>
+                  <li><strong>Configuración del entorno de trabajo:</strong> Instalación y configuración de software, gestión de proyectos y archivos.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 2: Adobe Premiere Pro - Edición Básica</h4>
+                <ul>
+                  <li><strong>Interfaz y flujo de trabajo:</strong> Paneles, herramientas, atajos de teclado y personalización.</li>
+                  <li><strong>Importación y organización de material:</strong> Gestión de medios, metadatos y creación de secuencias.</li>
+                  <li><strong>Técnicas de corte y montaje:</strong> Edición de tres puntos, trimming, slip, slide y ripple edit.</li>
+                  <li><strong>Ajustes de audio básicos:</strong> Nivelación, crossfades, reducción de ruido y efectos de audio.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 3: Corrección de Color y Efectos</h4>
+                <ul>
+                  <li><strong>Corrección de color básica:</strong> Balance de blancos, exposición, contraste y saturación.</li>
+                  <li><strong>Uso de LUTs y presets:</strong> Aplicación de looks predefinidos y creación de estilos propios.</li>
+                  <li><strong>Efectos de transición:</strong> Fundidos, wipes, disoluciones y transiciones personalizadas.</li>
+                  <li><strong>Máscaras y rotoscopia básica:</strong> Aislamiento de elementos y efectos localizados.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 4: Adobe After Effects - Animación y Efectos</h4>
+                <ul>
+                  <li><strong>Introducción a After Effects:</strong> Interfaz, composiciones, capas y línea de tiempo.</li>
+                  <li><strong>Animación de texto y gráficos:</strong> Keyframes, interpolación y expresiones básicas.</li>
+                  <li><strong>Efectos visuales básicos:</strong> Partículas, distorsiones, chroma key y tracking.</li>
+                  <li><strong>Integración con Premiere Pro:</strong> Dynamic Link, importación y exportación entre aplicaciones.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 5: Edición para Redes Sociales</h4>
+                <ul>
+                  <li><strong>Formatos y especificaciones por plataforma:</strong> Requisitos técnicos para Instagram, TikTok, YouTube y otras redes.</li>
+                  <li><strong>Optimización para Instagram, TikTok y YouTube:</strong> Estrategias de edición específicas para cada plataforma.</li>
+                  <li><strong>Creación de intros y outros:</strong> Diseño de elementos de marca y llamadas a la acción.</li>
+                  <li><strong>Subtítulos y accesibilidad:</strong> Creación de subtítulos, closed captions y consideraciones de accesibilidad.</li>
+                </ul>
+              </div>
+              
+              <div class="module">
+                <h4>Módulo 6: Proyecto Final</h4>
+                <ul>
+                  <li><strong>Planificación del proyecto audiovisual:</strong> Guión, storyboard y organización de la producción.</li>
+                  <li><strong>Edición y postproducción:</strong> Aplicación de todas las técnicas aprendidas en un proyecto completo.</li>
+                  <li><strong>Exportación para diferentes plataformas:</strong> Configuraciones óptimas según el medio de distribución.</li>
+                  <li><strong>Presentación y feedback:</strong> Presentación del proyecto final y evaluación crítica.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="course-section">
+              <h3>Metodología de Enseñanza</h3>
+              <p>El curso combina teoría y práctica, con énfasis en el aprendizaje mediante proyectos reales. Cada sesión incluye:</p>
+              <ul>
+                <li>Explicación de conceptos técnicos</li>
+                <li>Demostraciones paso a paso</li>
+                <li>Ejercicios prácticos guiados</li>
+                <li>Análisis de ejemplos profesionales</li>
+                <li>Tiempo para experimentación y creatividad</li>
+              </ul>
+              <p>Los estudiantes tendrán acceso a material de práctica, recursos adicionales y tutorías personalizadas para resolver dudas específicas.</p>
+            </div>
+            
+            <div class="course-section">
+              <h3>Requisitos Técnicos</h3>
+              <ul>
+                <li>Computadora con procesador i5 o superior (8GB RAM mínimo, 16GB recomendado)</li>
+                <li>Sistema operativo Windows 10/11 o macOS Catalina o superior</li>
+                <li>Espacio en disco: mínimo 100GB libres</li>
+                <li>Adobe Premiere Pro y After Effects (se proporcionará información sobre licencias)</li>
+                <li>No se requieren conocimientos previos, aunque es útil tener nociones básicas de fotografía o video</li>
+              </ul>
+            </div>
+            
+            <div class="course-section">
+              <h3>Evaluación y Certificación</h3>
+              <p>La evaluación del curso se basa en:</p>
+              <ul>
+                <li>Ejercicios semanales (30%)</li>
+                <li>Proyecto intermedio (20%)</li>
+                <li>Proyecto final (50%)</li>
+              </ul>
+              <p>Al finalizar el curso y aprobar la evaluación, recibirás un certificado digital que acredita tus conocimientos en Edición de Video Profesional.</p>
+            </div>
+            
+            <div class="course-section">
+              <h3>Información Adicional</h3>
+              <p><strong>Duración:</strong> 10 semanas</p>
+              <p><strong>Clases:</strong> 2 clases semanales de 2 horas</p>
+              <p><strong>Modalidad:</strong> 100% online con clases en vivo</p>
+              <p><strong>Plataforma:</strong> Google Meet</p>
+              <p><strong>Precio:</strong> $16.500 ARS semanal</p>
+              <p><strong>Formas de pago:</strong> Transferencia bancaria, Mercado Pago, tarjeta de crédito/débito</p>
+              <a href="https://api.whatsapp.com/send?phone=%2B5492944297078&amp;text=Me+interesa+el+curso+de+Edición+de+Video" class="btn btn-primary" target="_blank">Inscribirme ahora</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/typed/typed.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+  
+  <script>
+    // Script para la navegación de cursos
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.course-nav a');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Remover clase active de todos los links
+          navLinks.forEach(l => l.classList.remove('active'));
+          
+          // Agregar clase active al link clickeado
+          this.classList.add('active');
+          
+          // Scroll al curso correspondiente
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          window.scrollTo({
+            top: targetSection.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Detectar qué sección está visible al hacer scroll
+      window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('.course-detail');
+        let current = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 150;
+          const sectionHeight = section.clientHeight;
+          
+          if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+            current = '#' + section.getAttribute('id');
+          }
+        });
+        
+        if (current) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === current) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
