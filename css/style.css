@@ -405,6 +405,26 @@ nav ul li a {
  color: #fff; 
 }
 
+@media (max-width: 768px) {
+.about-us p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify; 
+}
+
+#about .div-img-bg {
+  padding-bottom: 0;
+  border: 20px solid #ffcc00;
+}
+
+#about .div-img-bg .about-img img {
+  width: 100%;
+  box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
+  margin: 0;
+}
+
+}
+
 /*-----------------------------------------------------------------------------------*/
 /*   Services
 
@@ -493,6 +513,7 @@ nav ul li a {
   background-color: #ffffff;
   border-radius: 10px;
   transition: all 0.5s ease-in-out;
+  width: 90%;
   display: inline-block; /* Para que estén en línea */
   vertical-align: top; /* Alinear en la parte superior */
 }
