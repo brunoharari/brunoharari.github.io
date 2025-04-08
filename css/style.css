@@ -556,7 +556,7 @@ nav ul li a {
   font-size: 48px;
   margin-bottom: 15px;
   display: block;
-  color: #333;
+  padding-top: 25px;
 }
 
 .skill h3 {
@@ -573,27 +573,44 @@ nav ul li a {
 .skill.skill-design {
   border: 4px solid #f06292;
 }
+.skill.skill-design i {
+  color: #f06292;
+}
 
 .skill.skill-programming {
   border: 4px solid #64b5f6;
+}
+.skill.skill-programming i {
+  color: #64b5f6;
 }
 
 .skill.skill-marketing {
   border: 4px solid #81c784;
 }
+.skill.skill-marketing i {
+  color: #81c784;
+}
 
 .skill.skill-webflow {
   border: 4px solid #ffb74d;
+}
+.skill.skill-webflow i {
+  color: #ffb74d;
 }
 
 .skill.skill-education {
   border: 4px solid #9e9e9e;
 }
+.skill.skill-education i {
+  color: #9e9e9e;
+}
 
 .skill.skill-innovation {
   border: 4px solid #f48fb1;
 }
-
+.skill.skill-innovation i {
+  color: #f48fb1;
+}
 /* Hover colors for each skill */
 .skill.skill-design:hover {
   background-color: #f06292;
