@@ -511,7 +511,7 @@ nav ul li a {
 }
 
 
-.process-steps {
+#process {
   position: relative;
   background-color: #292929;
   color: white;
@@ -533,7 +533,6 @@ nav ul li a {
 .process-step {
   margin-bottom: 30px;
 }
-
 .process-icon {
   position: relative;
   width: 80px;
@@ -544,22 +543,31 @@ nav ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease-in-out;
 }
-
 
 .process-icon i {
   font-size: 30px;
-  color: #333;
+  color: #242424;
+  transition: color 0.3s ease-in-out;
 }
 
+.process-step:hover .process-icon {
+  background-color: #242424;
+  border: 2px solid #707070;
+}
+
+.process-step:hover .process-icon i {
+  color: #fff;
+}
 .step-number {
   position: absolute;
   top: -10px;
   right: -10px;
   width: 30px;
   height: 30px;
-  background: #007bff;
-  color: white;
+  background: #ffcc00;
+  color: #242424;
   border-radius: 50%;
   display: flex;
   align-items: center;
