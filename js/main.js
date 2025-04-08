@@ -48,18 +48,28 @@ function onScroll(event) {
     }
 }
 
+// Handle both click and scroll events for smooth scrolling
+document.querySelectorAll('.smooth-scroll').forEach(link => {
+  // Click event handler
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    scrollToTarget(this.getAttribute('href'));
+  });
+});
 
- 
+// Function to handle smooth scrolling
+function scrollToTarget(targetId) {
+  const targetElement = document.querySelector(targetId);
+  if (!targetElement) return;
+  
+  const offset = 100; // Offset in pixels
+  const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
-  // ========================================================================= //
-  //  //NAVBAR SHOW - HIDE
-  // ========================================================================= //
-
-
-  // ========================================================================= //
-  //  // RESPONSIVE MENU
-  // ========================================================================= //
-
+  window.scrollTo({
+    top: elementPosition,
+    behavior: 'smooth'
+  });
+}
 
 
   // ========================================================================= //
