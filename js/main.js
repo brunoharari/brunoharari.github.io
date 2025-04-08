@@ -154,7 +154,7 @@ function scrollToTarget(targetId) {
 // ========================================================================= //
 //  Porfolio isotope and filter
 // ========================================================================= //
-$(window).load(function () {
+$(window).on('load', function () {
 
   var portfolioIsotope = $('.portfolio-container').isotope({
     itemSelector: '.portfolio-thumbnail',
@@ -168,7 +168,7 @@ $(window).load(function () {
     portfolioIsotope.isotope({ filter: $(this).data('filter') });
   });
 
-})
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
