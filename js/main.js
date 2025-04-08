@@ -7,16 +7,15 @@ $(document).ready(function () {
   //  //SMOOTH SCROLL
   // ========================================================================= //
 
+$(document).on("scroll", onScroll);
 
-  $(document).on("scroll", onScroll);
-
-$('a.internal-link').on('click', function (e) {
-    var href = $(this).attr('href');
-    if (href.startsWith("#")) {
+$('a.internal-link').on('click', function(e) {
+    const href = $(this).attr('href');
+    if (href?.startsWith("#")) {
         e.preventDefault();
         $(document).off("scroll");
 
-        $('a').each(function () {
+        $('a').each(function() {
             $(this).removeClass('active');
             if ($(window).width() < 768) {
                 $('.nav-menu').slideUp();
@@ -25,24 +24,26 @@ $('a.internal-link').on('click', function (e) {
 
         $(this).addClass('active');
 
-        var target = this.hash,
-            menu = target;
-
-        target = $(target);
+        const $target = $(this.hash);
+        
         $('html, body').stop().animate({
-            'scrollTop': target.offset().top - 100
-        }, 500, 'swing', function () {
-            $(document).on("scroll", onScroll);
+            scrollTop: $target.offset()?.top - 100 || 0
+        }, {
+            duration: 500,
+            easing: 'swing',
+            complete: function() {
+                $(document).on("scroll", onScroll);
+            }
         });
     }
 });
 
 function onScroll(event) {
     if ($('.home').length) {
-        var scrollPos = $(document).scrollTop();
-        $('nav ul li a[href^="#"]').each(function () {
-            var currLink = $(this);
-            var refElement = $(currLink.attr("href"));
+        const scrollPos = $(document).scrollTop();
+        $('nav ul li a[href^="#"]').each(function() {
+            const $currLink = $(this);
+            const $refElement = $($currLink.attr("href"));
             // Resto del código de manipulación aquí
         });
     }
