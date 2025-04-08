@@ -86,21 +86,10 @@ function onScroll(event) {
     });
   });
 
-  function redirectToCorrectIndex() {
-    var language = window.navigator.language || window.navigator.userLanguage;
   
-    // Extract the current page name from the URL
-    var currentPage = window.location.pathname.split('/').pop();
-  
-    if (language === 'en' && currentPage !== 'index-eng.html') {
-      window.location.href = 'index-eng.html';
-    } else if (language !== 'en' && currentPage !== 'index.html') {
-      window.location.href = 'index.html';
-    }
-  }
   
   // Call the function when the page is fully loaded
-  document.addEventListener('DOMContentLoaded', redirectToCorrectIndex);
+
   // ========================================================================= //
   //  Owl Carousel Services
   // ========================================================================= //
@@ -176,7 +165,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const navMenu = document.querySelector(".nav-menu");
 
   menuToggle.addEventListener("click", function () {
-    navMenu.classList.toggle("active");
+    // Add slide animation using jQuery
+    if (navMenu.classList.contains("active")) {
+      $(navMenu).slideUp(300, function() {
+        navMenu.classList.remove("active");
+      });
+    } else {
+      navMenu.classList.add("active");
+      $(navMenu).hide().slideDown(300);
+    }
   });
 });
 
