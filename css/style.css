@@ -610,6 +610,7 @@ p.agency-name {
   align-items: center;
   justify-content: center;
 }
+
 .tech-slider .tech-item {
   padding: 20px;
   text-align: center;
@@ -631,23 +632,29 @@ p.agency-name {
   margin: 0;
 }
 
-/* Owl Carousel Custom Navigation */
-.tech-slider .owl-nav button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2) !important;
-  color: #fff !important;
-  padding: 5px 15px !important;
-  border-radius: 50% !important;
+
+
+@media (max-width: 768px) {
+  .tech-slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .tech-slider .tech-item {
+    padding: 10px;
+  }
+  
+  .tech-slider .tech-item i {
+    font-size: 25px;
+  }
 }
 
-.tech-slider .owl-nav button.owl-prev {
-  left: -40px;
-}
-
-.tech-slider .owl-nav button.owl-next {
-  right: -40px;
+@media (max-width: 480px) {
+  .tech-slider {
+    grid-template-columns: 1fr;
+  }
 }
 
  /* Additional CSS for Skills section */
