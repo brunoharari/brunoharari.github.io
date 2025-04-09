@@ -590,6 +590,56 @@ nav ul li a {
   }
 }
 
+#technologies {
+  background-color: #1a1919;
+}
+
+.tech-slider {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tech-slider .tech-item {
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tech-slider .tech-item:hover {
+  transform: translateY(-5px);
+}
+
+.tech-slider .tech-item i {
+  color: #ffffff;
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.tech-slider .tech-item h5 {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Owl Carousel Custom Navigation */
+.tech-slider .owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  padding: 5px 15px !important;
+  border-radius: 50% !important;
+}
+
+.tech-slider .owl-nav button.owl-prev {
+  left: -40px;
+}
+
+.tech-slider .owl-nav button.owl-next {
+  right: -40px;
+}
+
  /* Additional CSS for Skills section */
 
  .skill {
@@ -819,16 +869,15 @@ form button {
   padding-bottom: 50px;
 }
 
-#portfolio .portfolio-list {
+#portfolio .portfolio-list ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
   margin-bottom: 50px;
 }
 
-#portfolio .portfolio-list .nav {
-  display: inline-block;
-  margin: 0;
-}
-
-#portfolio .portfolio-list .nav li {
+#portfolio .portfolio-list ul li {
   margin: 0 40px 0 0;
   padding: 20px;
   float: left;
@@ -849,8 +898,8 @@ form button {
   transition: all 0.5s ease-in-out 0s;
 }
 
-#portfolio .portfolio-list .nav li:hover,
-#portfolio .portfolio-list .nav li.filter-active {
+#portfolio .portfolio-list ul li:hover,
+#portfolio .portfolio-list ul li.filter-active {
   color: black;
   background-color: #ffcc00;
   -moz-transition: all 0.3s ease-in-out 0s;
@@ -880,6 +929,18 @@ form button {
   -moz-border-radius: 13px 13px 13px 13px;
 }
 
+@media (max-width: 768px) {
+  #portfolio .portfolio-list ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #portfolio .portfolio-list ul li {
+    margin: 0;
+    width: 80%;
+  }
+}
 /*-----------------------------------------------------------------------------------*/
 /*  Journal
 /*-----------------------------------------------------------------------------------*/
