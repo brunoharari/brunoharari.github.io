@@ -372,6 +372,8 @@ nav ul li a {
   flex-direction: column;
 }
 
+
+
 .header-content h1 {
   font-size: 40px;
   font-weight: 700;
@@ -390,6 +392,14 @@ nav ul li a {
   text-transform: capitalize;
   color: #ffffff;
   font-weight: 500;
+}
+
+p.agency-name {
+  font-family: 'Changa One';
+  font-size: 40px;
+  color: #000;
+  letter-spacing: 0;
+
 }
 
 .header-content .list-social li {
