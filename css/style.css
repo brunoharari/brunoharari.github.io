@@ -659,6 +659,12 @@ p.agency-name {
 
  /* Additional CSS for Skills section */
 
+#skills-container {
+  background-color: #1a1919;
+  padding: 40px 0;
+  text-align: center;
+}
+
  .skill {
   text-align: center;
   padding: 20px;
