@@ -28,6 +28,7 @@
     display: none;
     float: none;
     width: 100%;
+    z-index: 1500; /* Asegurar que el menú tenga un z-index adecuado */
   }
   .nav-menu li {
     float: none;
@@ -43,6 +44,7 @@
     float: right;
     padding-top: 15px;
     display: block;
+    z-index: 1600; /* Asegurar que el botón de menú tenga un z-index adecuado */
   }
   /* About */
   .head-info .header-content .cmaster h1 {
@@ -99,6 +101,7 @@
     display: none;
     float: none;
     width: 100%;
+    z-index: 1500; /* Asegurar que el menú tenga un z-index adecuado */
   }
   .nav-menu li {
     float: none;
@@ -114,6 +117,7 @@
     float: right;
     padding-top: 15px;
     display: block;
+    z-index: 1600; /* Asegurar que el botón de menú tenga un z-index adecuado */
   }
   /* About */
   .head-info .header-content h1 {
@@ -170,6 +174,7 @@
     display: none;
     float: none;
     width: 100%;
+    z-index: 1500; /* Asegurar que el menú tenga un z-index adecuado */
   }
   .nav-menu li {
     float: none;
@@ -185,6 +190,7 @@
     float: right;
     padding-top: 15px;
     display: block;
+    z-index: 1600; /* Asegurar que el botón de menú tenga un z-index adecuado */
   }
   /* About */
   .head-info .header-content h1 {
@@ -239,6 +245,8 @@
     bottom: 20px;
     right: 20px;
     font-size: 35px;
+    z-index: 9999 !important; /* Aumentar z-index para asegurar que esté por encima de todo */
+    position: fixed !important; /* Asegurar que la posición sea fija */
   }
   
   .whatsapp-float i {
@@ -253,6 +261,7 @@
     display: none;
     float: none;
     width: 100%;
+    z-index: 1500; /* Asegurar que el menú tenga un z-index adecuado */
   }
   .nav-menu li {
     float: none;
@@ -268,6 +277,7 @@
     float: right;
     padding-top: 15px;
     display: block;
+    z-index: 1600; /* Asegurar que el botón de menú tenga un z-index adecuado */
   }
   /* About */
   .head-info .header-content h1 {
@@ -323,6 +333,7 @@
     display: none;
     float: none;
     width: 100%;
+    z-index: 1500; /* Asegurar que el menú tenga un z-index adecuado */
   }
   .nav-menu li {
     float: none;
@@ -338,6 +349,7 @@
     float: right;
     padding-top: 15px;
     display: block;
+    z-index: 1600; /* Asegurar que el botón de menú tenga un z-index adecuado */
   }
   /* About */
   .head-info .header-content h1 {
