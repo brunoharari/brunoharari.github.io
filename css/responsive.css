@@ -232,6 +232,18 @@
  */
 
 @media (max-width: 480px) {
+  /* WhatsApp button fix */
+  .whatsapp-float {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 35px;
+  }
+  
+  .whatsapp-float i {
+    margin-top: 5px;
+  }
   /* Navbar */
   nav {
     padding: 20px 15px;
