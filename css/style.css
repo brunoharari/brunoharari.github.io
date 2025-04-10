@@ -217,6 +217,14 @@ p {
   }
 }
 
+@media  (max-width: 768px)  {
+  .section-title h2 {
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
 
 /*-----------------------------------------------------------------------------------*/
 /*  Navbar Top
