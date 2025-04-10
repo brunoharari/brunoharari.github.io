@@ -9,7 +9,8 @@ $(document).ready(function () {
 
 $(document).on("scroll", onScroll);
 
-$('a.internal-link').on('click', function(e) {
+// Unified smooth scroll for all navigation links
+$('a.smoothScroll, a.internal-link, .nav-link.smoothScroll, a.smooth-scroll, .scroll-down a').on('click', function(e) {
     const href = $(this).attr('href');
     if (href?.startsWith("#")) {
         e.preventDefault();
@@ -25,18 +26,20 @@ $('a.internal-link').on('click', function(e) {
         $(this).addClass('active');
 
         const $target = $(this.hash);
-        
-        $('html, body').stop().animate({
-            scrollTop: $target.offset()?.top - 100 || 0
-        }, {
-            duration: 500,
-            easing: 'swing',
-            complete: function() {
-                $(document).on("scroll", onScroll);
-            }
-        });
+        if ($target.length) {
+            $('html, body').stop().animate({
+                scrollTop: $target.offset().top - 100
+            }, {
+                duration: 500,
+                easing: 'swing',
+                complete: function() {
+                    $(document).on("scroll", onScroll);
+                }
+            });
+        }
     }
 });
+
 
 function onScroll(event) {
     if ($('.home').length) {
@@ -44,33 +47,19 @@ function onScroll(event) {
         $('nav ul li a[href^="#"]').each(function() {
             const $currLink = $(this);
             const $refElement = $($currLink.attr("href"));
-            // Resto del código de manipulación aquí
+            if ($refElement.length && 
+                $refElement.offset().top - 200 <= scrollPos && 
+                $refElement.offset().top + $refElement.height() > scrollPos) {
+                $('nav ul li a').removeClass('active');
+                $currLink.addClass('active');
+            } else {
+                $currLink.removeClass('active');
+            }
         });
     }
 }
 
-// Handle both click and scroll events for smooth scrolling
-document.querySelectorAll('.smoothScroll').forEach(link => {
-  // Click event handler
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    scrollToTarget(this.getAttribute('href'));
-  });
-});
-
-// Function to handle smooth scrolling
-function scrollToTarget(targetId) {
-  const targetElement = document.querySelector(targetId);
-  if (!targetElement) return;
-  
-  const offset = 100; // Offset in pixels
-  const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-
-  window.scrollTo({
-    top: elementPosition,
-    behavior: 'smooth'
-  });
-}
+// Smooth scrolling is now handled by the unified jQuery handler above
 
 
   // ========================================================================= //
