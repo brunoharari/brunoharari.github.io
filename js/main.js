@@ -50,7 +50,7 @@ function onScroll(event) {
 }
 
 // Handle both click and scroll events for smooth scrolling
-document.querySelectorAll('.smooth-scroll').forEach(link => {
+document.querySelectorAll('.smoothScroll').forEach(link => {
   // Click event handler
   link.addEventListener('click', function(e) {
     e.preventDefault();
@@ -171,22 +171,6 @@ $(window).on('load', function () {
 
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector(".nav-menu");
-
-  menuToggle.addEventListener("click", function () {
-    // Add slide animation using jQuery
-    if (navMenu.classList.contains("active")) {
-      $(navMenu).slideUp(300, function() {
-        navMenu.classList.remove("active");
-      });
-    } else {
-      navMenu.classList.add("active");
-      $(navMenu).hide().slideDown(300);
-    }
-  });
-});
 
 
 

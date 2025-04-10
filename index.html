@@ -55,33 +55,45 @@
 
 
   <!-- start section navbar -->
-  <nav id="main-nav">
-    <div class="row">
-      <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo.png" alt="logo" height="60">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="logo">
-          <a href="index.html"><img src="images/logo.png" alt="logo"></a>
-        </div>
-
-        <div class="menu-toggle">&#9776;</div>
-
-        <ul class="nav-menu list-unstyled">
-          <li><a href="#header" class="smoothScroll internal-link">Inicio</a></li>
-          <li><a href="#description" class="smoothScroll internal-link">Nosotros</a></li>
-          <li><a href="#portfolio" class="smoothScroll internal-link">Portafolio</a></li>
-          <li><a href="#courses" class="smoothScroll internal-link">Cursos</a></li>
-          
-          <li><a href="https://api.whatsapp.com/send?phone=%2B5492944297078&amp;text=Quiero+contactarme+con+Brandr" target="_blank" class="smoothScroll internal-link">Contacto</a></li>
-          
-  
-            <li><a href="https://www.instagram.com/brandr.design/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            
-          
-        </ul>
-
-      </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto d-flex justify-content-between mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link smoothScroll hover-underline" href="#header">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link smoothScroll hover-underline" href="#description">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link smoothScroll hover-underline" href="#portfolio">Portafolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link smoothScroll hover-underline" href="#courses">Cursos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link hover-underline" href="https://api.whatsapp.com/send?phone=%2B5492944297078&amp;text=Quiero+contactarme+con+Brandr" target="_blank">Contacto</a>
+        </li>
+      </ul>
+      
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link social-icon" href="https://www.instagram.com/brandr.design/" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
   <!-- End section navbar -->
 
 
@@ -644,7 +656,8 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Template Main Javascript File -->
     <script src="./js/main.js"></script>
-  <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script src="./lib/typed/typed.js"></script>
   <script src="./lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="./lib/magnific-popup/magnific-popup.min.js"></script>
