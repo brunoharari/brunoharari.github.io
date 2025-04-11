@@ -208,7 +208,20 @@ p {
  margin-top: 5px;
 }
 
+.white-popup {
+  background: #fff;
+  padding: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
 
+.white-popup .project-title {
+  font-size: 24px;
+  color: #2c2b2b;
+  font-weight: bold;
+  margin-bottom: 10px; 
+}
 
 .whatsapp-float {
  animation: pulse 2s ease-in-out infinite;
