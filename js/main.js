@@ -28,7 +28,7 @@ $('a.smoothScroll, a.internal-link, .nav-link.smoothScroll, a.smooth-scroll, .sc
         const $target = $(this.hash);
         if ($target.length) {
             $('html, body').stop().animate({
-                scrollTop: $target.offset().top - 120
+                scrollTop: $target.offset().top - 100
             }, {
                 duration: 500,
                 easing: 'swing',
@@ -159,9 +159,3 @@ $(window).on('load', function () {
   });
 
 });
-
-
-
-
-
-
