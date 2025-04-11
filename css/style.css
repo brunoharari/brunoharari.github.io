@@ -168,14 +168,11 @@ p {
 }
 
 .paddsection {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
-.paddsections {
-  padding-top: 90px;
-  padding-bottom: 90px !important;
-}
+
 
 .hvr-shutter-in-horizontal::before {
   background: #333;
