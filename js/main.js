@@ -126,7 +126,7 @@ $(document).ready(function () {
       id: "5",
       image: "images/portfolio/5.jpg",
       title: "Diseño de Logotipo: Octopus",
-      description: "Creación de un logotipo para la marca de la inmobiliaria Octopus.",
+      description: "Creación de un logotipo para la marca Octopus.",
       category: "Marcas"
     },
     {
