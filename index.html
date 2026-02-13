@@ -38,6 +38,34 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/favicon.png">
 
+  <!-- Language Switch Button Style -->
+  <style>
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border: 2px solid #ffcc00;
+      border-radius: 20px;
+      background: transparent;
+      color: #000;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none !important;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .lang-switch:hover {
+      background: #ffcc00;
+      color: #000 !important;
+      text-decoration: none !important;
+    }
+
+    .lang-switch .lang-icon {
+      font-size: 18px;
+    }
+  </style>
 
 </head>
 
@@ -90,7 +118,12 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" style="gap: 10px; align-items: center;">
+          <li class="nav-item">
+            <a class="lang-switch" href="./index-eng.html" title="Switch to English">
+              <span class="lang-icon">🌐</span> EN
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link social-icon" href="https://www.instagram.com/brandr.design/" target="_blank">
               <i class="fab fa-instagram"></i>
